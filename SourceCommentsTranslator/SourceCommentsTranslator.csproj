@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>src-translator</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Copyright>Copyright (c) 2024 xmevik</Copyright>
+    <Version>0.8.0-beta</Version>
+    <AssemblyTitle>Source Comments Translator</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="NLog" Version="5.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CommentRegex.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="DeleteFiles" AfterTargets="Publish">
+    <ItemGroup>
+      <FilesToDelete Include="$(PublishDir)*.pdb;"/>
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)">
+      <Output
+				TaskParameter="DeletedFiles"
+				ItemName="FilesDeleted"/>
+    </Delete>
+    <Message Text="Deleted PDB files: @(FilesDeleted)" Importance="high" />
+  </Target>
+
+</Project>

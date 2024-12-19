@@ -1,0 +1,18 @@
+﻿[
+  {
+    "FileExtensions": [ ".py" ],
+    "SingleLineComment": "#",
+    "MultiLineComment": {
+      "InitialBracket": "\"\"\"",
+      "EndBracket": "\"\"\""
+    }
+  },
+  {
+    "FileExtensions": [ ".cs", ".js" ],
+    "SingleLineComment": "//",
+    "MultiLineComment": {
+      "InitialBracket": "/*",
+      "EndBracket": "*/"
+    }
+  }
+]

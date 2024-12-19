@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SourceCommentsTranslator": {
+      "commandName": "Project",
+      "commandLineArgs": "--path \"H:\\Projects\\VPet\" --debug --libretranslate --sortcharsby \"[^\\u4E00-\\u9FFF\\u3040-\\u30FF\\u3130-\\u318F\\uAC00-\\uD7AF]+\""
+    }
+  }
+}
